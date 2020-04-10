@@ -83,7 +83,7 @@ pixels; and then writes out all of the blobs (beads with at least 1 pixel).
 """
 
 """
-ورودی ها را از خط فرمان گرفته و خروجی بیدها را چاپ میکند
+Entry
 """
 
 def _main():

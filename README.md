@@ -2,8 +2,8 @@
 
 Princeton University
 
-https://user-images.githubusercontent.com/45029937/79608759-cc920880-810a-11ea-85e1-d71ce40c98b3.gif
-http://www.snrazavi.ir/python-2019/
+. https://user-images.githubusercontent.com/45029937/79608759-cc920880-810a-11ea-85e1-d71ce40c98b3.gif
+. http://www.snrazavi.ir/python-2019/
 
 Re-affirm the atomic nature of matter by tracking the motion of particles undergoing Brownian motion, fitting this data to Einstein's model, and estimating Avogadro's number.
 

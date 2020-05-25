@@ -20,4 +20,31 @@ Re-affirm the atomic nature of matter by tracking the motion of particles underg
 Read in the image. Use the Picture data type from Section 3.1 to read in the image.
 Classify the pixels as foreground or background. We use a simple, but effective, technique known as thresholding to separate the pixels into foreground and background components: all pixels with monochrome luminance values strictly below some threshold tau are considered background, and all others are considered foreground. The two pictures above illustrates the original frame (above left) and the same frame after thresholding (above right), using tau = 180.0. This value of tau results in an effective cut for the supplied data.
 Find the blobs. A polystyrene bead is typically represented by a disc-like shape of at least some minimum number P (typically 25) of connected foreground pixels. A blob or connected component is a maximal set of connected foreground pixels, regardless of its shape or size. We will refer to any blob containing at least P pixels as a bead. The center-of-mass of a blob (or bead) is the average of the x- and y-coordinates of its constituent pixels.
-Create a helper data type Blob that has the following API
+Create a helper data type Blob that has the following API.
+Create a helper data type Blob that has the following API.
+
+public class Blob
+------------------------------------------------------------------------------------------------
+```
+public Blob()                    // construct an empty blob
+public void add(int i, int j)    // add a pixel (i, j) to the blob
+public int mass()                // return number of pixels added = its mass
+public double distanceTo(Blob b) // return distance between centers of masses of this blob and b
+public String toString()         // return string containing this blob's mass and center of mass
+                                 // format center-of-mass coordinates with 4 digits to right
+                                 // of decimal point
+```
+Next, write a data type BlobFinder that has the following API. Use depth-first search to efficiently identify the blobs.
+
+public class BlobFinder
+------------------------------------------------------------------------------------------------
+```
+// find all blobs in the picture using the luminance threshold tau
+public BlobFinder(Picture picture, double tau)
+
+// return the number of beads with >= P pixels
+public int countBeads(int P)
+
+// return all beads with >= P pixels
+public Blob[] getBeads(int P)
+```

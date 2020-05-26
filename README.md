@@ -1,6 +1,6 @@
 # Atomic Nature of Matter
 
-Princeton university project
+Princeton University project
 
 ![Python-Project.gif](https://user-images.githubusercontent.com/45029937/79608759-cc920880-810a-11ea-85e1-d71ce40c98b3.gif)
 

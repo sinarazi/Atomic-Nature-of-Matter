@@ -1,6 +1,6 @@
 # Atomic Nature of Matter
 
-Princeton University project
+Princeton university project
 
 ![Python-Project.gif](https://user-images.githubusercontent.com/45029937/79608759-cc920880-810a-11ea-85e1-d71ce40c98b3.gif)
 
@@ -23,7 +23,7 @@ Find the blobs. A polystyrene bead is typically represented by a disc-like shape
 Create a helper data type Blob that has the following API.
 Create a helper data type Blob that has the following API.
 
-### public class Blob
+#### public class Blob
 
 ```
 public Blob()                    // construct an empty blob
@@ -36,7 +36,7 @@ public String toString()         // return string containing this blob's mass an
 ```
 Next, write a data type BlobFinder that has the following API. Use depth-first search to efficiently identify the blobs.
 
-### public class BlobFinder 
+#### public class BlobFinder 
 
 ```
 // find all blobs in the picture using the luminance threshold tau

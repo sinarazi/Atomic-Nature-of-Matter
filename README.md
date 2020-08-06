@@ -1,10 +1,10 @@
 # Atomic Nature of Matter
 
-The project of Princeton university
+- The project of Princeton university
 
 ![Python-Project.gif](https://user-images.githubusercontent.com/45029937/79608759-cc920880-810a-11ea-85e1-d71ce40c98b3.gif)
 
-https://introcs.cs.princeton.edu/java/assignments/atomic.html
+- https://introcs.cs.princeton.edu/java/assignments/atomic.html
 
 Re-affirm the atomic nature of matter by tracking the motion of particles undergoing Brownian motion, fitting this data to Einstein's model, and estimating Avogadro's number.
 
@@ -40,11 +40,11 @@ Next, write a data type BlobFinder that has the following API. Use depth-first s
 
 ```
 // find all blobs in the picture using the luminance threshold tau
-public BlobFinder(Picture picture, double tau)
+def BlobFinder(Picture picture, double tau)
 
 // return the number of beads with >= P pixels
-public int countBeads(int P)
+def countBeads(int P)
 
 // return all beads with >= P pixels
-public Blob[] getBeads(int P)
+def Blob[] getBeads(int P)
 ```

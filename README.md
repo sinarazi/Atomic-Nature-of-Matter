@@ -26,11 +26,11 @@ Create a helper data type Blob that has the following API.
 #### public class Blob
 
 ```
-public Blob()                    // construct an empty blob
-public void add(int i, int j)    // add a pixel (i, j) to the blob
-public int mass()                // return number of pixels added = its mass
-public double distanceTo(Blob b) // return distance between centers of masses of this blob and b
-public String toString()         // return string containing this blob's mass and center of mass
+Blob()                    // construct an empty blob
+add(int i, int j)    // add a pixel (i, j) to the blob
+mass()                // return number of pixels added = its mass
+distanceTo(Blob b) // return distance between centers of masses of this blob and b
+toString()         // return string containing this blob's mass and center of mass
                                  // format center-of-mass coordinates with 4 digits to right
                                  // of decimal point
 ```

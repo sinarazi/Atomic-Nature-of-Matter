@@ -4,7 +4,7 @@
 
 ![Python-Project.gif](https://user-images.githubusercontent.com/45029937/79608759-cc920880-810a-11ea-85e1-d71ce40c98b3.gif)
 
-- https://introcs.cs.princeton.edu/java/assignments/atomic.html
+Check the website [here](https://introcs.cs.princeton.edu/java/assignments/atomic.html). 
 
 Re-affirm the atomic nature of matter by tracking the motion of particles undergoing Brownian motion, fitting this data to Einstein's model, and estimating Avogadro's number.
 

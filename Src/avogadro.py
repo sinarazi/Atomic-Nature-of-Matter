@@ -7,7 +7,7 @@ input; computes an estimate of Boltzmann's constant and Avogadro's number;
 and writes those estimates to standard output. """
 
 """
-یا از تکست فایل displacment ورودی را گرفته و در خروجی چاپ میکند یا فایل های jpg را بایستی دانه دانه وارد کنیم
+whe have to add jpg one by one inorder to print output or get dsplacment files of text files
 """
 
 def main():

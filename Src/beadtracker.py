@@ -12,7 +12,7 @@ each bead moves from one frame to the next (assuming it is no more than
 Delta). """
 
 """
-برای نمایش خروجی باید فایلهای jpg را به تک تک وارد نمود 
+we have to add jpg files one by one in order to show output.
 """
 def main():
     min_pixels = int(sys.argv[1])

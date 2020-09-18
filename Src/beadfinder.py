@@ -9,7 +9,7 @@ from picture import Picture
 class beadfinder:
     
     """
-    A data type for identifying blobs in a picture.
+    A data type in ordert to identify blobs in a picture.
     """
 
     def __init__(self, pic, tau):

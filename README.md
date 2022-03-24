@@ -2,7 +2,7 @@
 
 - The project of Princeton university
 
-![Python-Project.gif](https://user-images.githubusercontent.com/45029937/79608759-cc920880-810a-11ea-85e1-d71ce40c98b3.gif)
+<img src ="Img/Brownian.gif">
 
 Check the website [here](https://introcs.cs.princeton.edu/java/assignments/atomic.html). 
 

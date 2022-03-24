@@ -1,10 +1,10 @@
 # Atomic Nature of Matter
 
-- The project of Princeton university
+- The project of ```Princeton university```
 
 <img src ="Img/Brownian.gif">
 
-Check the website [here](https://introcs.cs.princeton.edu/java/assignments/atomic.html). 
+Check the website [here](https://introcs.cs.princeton.edu/java/assignments/atomic.html) so as to download the dataset. 
 
 Re-affirm the atomic nature of matter by tracking the motion of particles undergoing Brownian motion, fitting this data to Einstein's model, and estimating Avogadro's number.
 
@@ -26,24 +26,26 @@ Create a helper data type Blob that has the following API.
 #### public class Blob:
 
 ```
-Blob()                    // construct an empty blob
-add(int i, int j)    // add a pixel (i, j) to the blob
-mass()                // return number of pixels added = its mass
-distanceTo(Blob b) // return distance between centers of masses of this blob and b
-toString()         // return string containing this blob's mass and center of mass
-                                 // format center-of-mass coordinates with 4 digits to right
-                                 // of decimal point
+Blob()                    # construct an empty blob
+add(int i, int j)         # add a pixel (i, j) to the blob
+mass()                    # return number of pixels added = its mass
+distanceTo(Blob b)        # return distance between centers of masses of this blob and b
+toString()                # return string containing this blob's mass and center of mass
+                                 """ 
+                                     format center-of-mass coordinates 
+                                     with 4 digits to right of decimal point
+                                 """
 ```
 
 #### public class BlobFinder :
 
 ```
-// find all blobs in the picture using the luminance threshold tau
+# find all blobs in the picture using the luminance threshold tau
 def BlobFinder(Picture picture, double tau)
 
-// return the number of beads with >= P pixels
+# return the number of beads with >= P pixels
 def countBeads(int P)
 
-// return all beads with >= P pixels
+# return all beads with >= P pixels
 def Blob[] getBeads(int P)
 ```

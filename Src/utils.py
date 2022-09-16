@@ -66,7 +66,7 @@ class Picture:
         elif (arg1 is not None) and (arg2 is None): # set W to other value, but H is 512
             fileName = arg1
             try:
-                self._surface = pygame.image.load(r'F:/My projects/Atomic-Nature-of-Matter/Dataset/' + fileName)
+                self._surface = pygame.image.load(fileName)
             except pygame.error:
                 raise IOError()
 

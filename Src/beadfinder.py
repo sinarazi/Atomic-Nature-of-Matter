@@ -1,7 +1,5 @@
 from utils import *
-import sys
 from blob import Blob
-import numpy as np
 import os
 
 
@@ -14,6 +12,7 @@ def create2D(rowCount, colCount, value=None):
     for row in range(rowCount):
         a[row] = [value] * colCount
     return a
+
 class beadfinder:
     
     """
@@ -27,14 +26,8 @@ class beadfinder:
         a luminance threshold tau.
         """
 
-        # Initialize an empty list for the blobs in pic.
-        
-        self._blobs = []
-
-        # Create a 2D list of booleans called marked, having the same
-        # dimensions as pic.
-        
-        marked = create2D(pic.width(), pic.height(), False)
+        self._blobs = [] # Initialize an empty list for the blobs in pic.    
+        marked = create2D(pic.width(), pic.height(), False) # the same dimension as pic
   
         for i in range(pic.width()):
             for j in range(pic.height()):
@@ -43,19 +36,16 @@ class beadfinder:
                 if b.mass() > 0:
                     self._blobs += [b]
 
-    def Blobfinder(self, Pic, Tau, i, j, marked, b):  
-        
-        """
-        Identifies a blob using depth-first search.
-        """
-        # picture (pic) 
-        # luminance threshold (tau) 
-        # pixel column (i)
-        # pixel row (j)
-        # 2D boolean matrix (marked)
-        # the blob being identified (blob).
-        
 
+    def Blobfinder(self, Pic, Tau, i, j, marked, b):  #  Identifies a blob using depth-first search.
+        """
+        picture (pic) 
+        luminance threshold (tau) 
+        pixel column (i)
+        pixel row (j)
+        2D boolean matrix (marked)
+        the blob being identified (blob)
+        """
         # Base case: return if pixel (i, j) is out of bounds, or if it
         # is marked, or if its luminance is less than tau.
         
@@ -65,18 +55,18 @@ class beadfinder:
 
        
         marked[i][j] = True  # Mark the pixel.
-        b.add(i, j) # Add the pixel to blob.
+        b.add(i, j)          # Add the pixel to blob.
         
         self.Blobfinder(Pic, Tau, i - 1, j, marked, b)
         self.Blobfinder(Pic, Tau, i + 1, j, marked, b)
         self.Blobfinder(Pic, Tau, i, j + 1, marked, b)
         self.Blobfinder(Pic, Tau, i, j - 1, marked, b)
 
+
     def getBeads(self, P):
         """
         Returns a list of all beads with >= P pixels.
         """
-
         Blob = []
         for i in self._blobs:
             if i.mass() >= P:
@@ -84,15 +74,6 @@ class beadfinder:
         return Blob
 
 
-"""
-Takes an integer P, a float Tau, and the name of a JPG file as
-command-line arguments; writes out all of the Beads with at least P
-pixels; and then writes out all of the blobs (beads with at least 1 pixel).
-"""
-
-"""
-Entry
-"""
 def writeFile(sth, location):
     open(str(location), "w").write("\n".join(str(i) for i in sth))
 
@@ -117,8 +98,7 @@ def _main():
         Beads = b.getBeads(P)
         writeFile(Beads, "beadfinder_output/output.txt")
 
- 
-        
+       
 
 if __name__ == '__main__':
     _main()

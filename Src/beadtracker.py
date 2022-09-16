@@ -1,6 +1,7 @@
 import sys
 from beadfinder import beadfinder, writeFile
 from utils import *
+import os
 
 
 """ Takes an integer min_pixels, a float Tau, a float Delta, and a sequence of JPG
@@ -19,20 +20,33 @@ def main():
     Delta = 25.0
     bf = beadfinder(Picture('F:/My projects/Atomic-Nature-of-Matter/Dataset/frame00000.jpg'), Tau)
     PrevBeads = bf.getBeads(min_pixels)
+    dataset = r'F:/My projects/Atomic-Nature-of-Matter/Dataset/'
 
-    for i in range(5, len(sys.argv)):
-        bf = beadfinder(Picture(sys.argv[i]), Tau)
-        CurrBeads = bf.getBeads(min_pixels)
-        for currBead in CurrBeads:
-            min_dist = float('inf')
-            for prevBead in PrevBeads:
-                d = currBead.distanceTo(prevBead)
-                if d <= Delta and d < min_dist:
-                    min_dist = d
-            if min_dist != float('inf'):
-                print('%.4f\n', min_dist)
-        writeFile("beadtracker_output/output.txt")
-        PrevBeads = CurrBeads
+    # for i in range(5, len(sys.argv)):
+    #     bf = beadfinder(Picture(sys.argv[i]), Tau)
+    #     CurrBeads = bf.getBeads(min_pixels)
+    #     for currBead in CurrBeads:
+    #         min_dist = float('inf')
+    #         for prevBead in PrevBeads:
+    #             d = currBead.distanceTo(prevBead)
+    #             if d <= Delta and d < min_dist:
+    #                 min_dist = d
+    #         if min_dist != float('inf'):
+    #             print('%.4f\n', min_dist)
+    #     writeFile("beadtracker_output/output.txt")
+    #     PrevBeads = CurrBeads
+
+    CurrBeads = bf.getBeads(min_pixels)
+    for currBead in CurrBeads:
+        min_dist = float('inf')
+        for prevBead in PrevBeads:
+            d = currBead.distanceTo(prevBead)
+            if d <= Delta and d < min_dist:
+                min_dist = d
+        if min_dist != float('inf'):
+            print('%.4f\n', min_dist)
+            writeFile(min_dist, "beadtracker_output/output.txt")
+    PrevBeads = CurrBeads
 
 if __name__ == '__main__':
     main()

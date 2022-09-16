@@ -1,33 +1,26 @@
 class Blob:
  
-    # Eraeye Blob 
-
     def __init__(self):
 
-        # Moarefi yek blobe khali
-
-        self._P = 0  # tedade pixel ha
-        self._x = 0.0  # x-coordinate markaze jerm
-        self._y = 0.0  # y-coordinate markaze jerm
+        # generation of vacant blob
+        self._P = 0    # The number of pixels
+        self._x = 0.0  # x-coordinate mass center
+        self._y = 0.0  # y-coordinate mass center
 
     def add(self, i, j):
 
-        # ezafe kardan pixel(i, j) be blob b
-
+        # adding pixel(i, j) to blob b
         self._x = (self._x * self._P + i) / (self._P + 1)
         self._y = (self._y * self._P + j) / (self._P + 1)
         self._P += 1
 
     def mass(self):
         
-        # returne tedade pixel haye afzode shode be in blob beEbarati return kardan jerm an
-
+        # return the number of pixels which mass is important
         return self._P
 
-    def distanceTo(self, other):
-        
-        # fasele oglidosi mian markaze do blob
-
+    def distanceTo(self, other):  
+        # euclidian distance of 2 blobs
         x1 = self._x
         y1 = self._y
         x2 = other._x
@@ -41,6 +34,5 @@ class Blob:
 
     def __str__(self):
 
-        # ijade yek baznemayee reshtei az blob
-
+        # generation of string of blobs
         return '%d (%.4f, %.4f)' % (self._P, self._x, self._y)

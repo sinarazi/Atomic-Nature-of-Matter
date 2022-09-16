@@ -2,6 +2,7 @@ from utils import *
 import sys
 from blob import Blob
 import numpy as np
+import os
 
 
 def create2D(rowCount, colCount, value=None):
@@ -93,21 +94,21 @@ pixels; and then writes out all of the blobs (beads with at least 1 pixel).
 Entry
 """
 def writeFile(sth):
-    with open('output.txt', 'w') as f:
-       f.write(sth)
+    open("./output/output.txt", "a").write("\n".join(str(i) for i in sth))
 
 
 def _main():
     
     P = 25
     Tau = 180.0
-    dataset = r'Atomic-Nature-of-Matter\Dataset'
-    for i in dataset:
-        Pic = Picture("frame0000"+str(i)+".jpg")
+    dataset = r'F:/My projects/Atomic-Nature-of-Matter/Dataset'
+    for i in os.listdir(dataset):
+        Pic = Picture('frame00000.jpg')
         b = beadfinder(Pic, Tau)
         Beads = b.getBeads(P)
-        for i in Beads:
-            writeFile(str(i))
+        writeFile(Beads)
+ 
+        
 
 if __name__ == '__main__':
     _main()

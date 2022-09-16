@@ -64,10 +64,9 @@ class Picture:
             self._surface.fill((0, 0, 0))
 
         elif (arg1 is not None) and (arg2 is None): # set W to other value, but H is 512
-            dataset = "Atomic-Nature-of-Matter\Dataset"
             fileName = arg1
             try:
-                self._surface = pygame.image.load(dataset + fileName)
+                self._surface = pygame.image.load(r'F:/My projects/Atomic-Nature-of-Matter/Dataset/' + fileName)
             except pygame.error:
                 raise IOError()
 

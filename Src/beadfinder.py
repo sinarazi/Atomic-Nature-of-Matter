@@ -1,9 +1,18 @@
 from utils import *
 import sys
-import re
 from blob import Blob
 import numpy as np
 
+
+def create2D(rowCount, colCount, value=None):
+    """
+    Create and return a 2D array having rowCount rows and colCount
+    columns, with each element initialized to value.
+    """
+    a = [None] * rowCount
+    for row in range(rowCount):
+        a[row] = [value] * colCount
+    return a
 class beadfinder:
     
     """
@@ -24,7 +33,7 @@ class beadfinder:
         # Create a 2D list of booleans called marked, having the same
         # dimensions as pic.
         
-        marked = np.array(pic.width(), pic.height(), False)
+        marked = create2D(pic.width(), pic.height(), False)
   
         for i in range(pic.width()):
             for j in range(pic.height()):
@@ -83,30 +92,22 @@ pixels; and then writes out all of the blobs (beads with at least 1 pixel).
 """
 Entry
 """
-def writeln(x=''):
-    """
-    Write x and an end-of-line mark to standard output.
-    """
-    if sys.hexversion < 0x03000000:
-        x = unicode(x)
-        x = x.encode('utf-8')
-    else:
-        x = str(x)
-    sys.stdout.write(x)
-    sys.stdout.write('\n')
-    sys.stdout.flush()
+def writeFile(sth):
+    with open('output.txt', 'w') as f:
+       f.write(sth)
 
 
 def _main():
     
-    P = int(sys.argv[1])
-    Tau = float(sys.argv[2])
-    Pic = Picture(sys.argv[3])
-    b = beadfinder(Pic, Tau)
-    Beads = b.getBeads(P)
-    
-    for i in Beads:
-        writeln(str(i))
+    P = 25
+    Tau = 180.0
+    dataset = r'Atomic-Nature-of-Matter\Dataset'
+    for i in dataset:
+        Pic = Picture("frame0000"+str(i)+".jpg")
+        b = beadfinder(Pic, Tau)
+        Beads = b.getBeads(P)
+        for i in Beads:
+            writeFile(str(i))
 
 if __name__ == '__main__':
     _main()

@@ -1,7 +1,6 @@
-import stdio
 import sys
-from beadfinder import beadfinder
-from picture import Picture
+from beadfinder import beadfinder, writeFile
+from utils import *
 
 
 """ Takes an integer min_pixels, a float Tau, a float Delta, and a sequence of JPG
@@ -15,10 +14,10 @@ Delta). """
 we have to add jpg files one by one in order to show output.
 """
 def main():
-    min_pixels = int(sys.argv[1])
-    Tau = float(sys.argv[2]) # adade ashari
-    Delta = float(sys.argv[3])
-    bf = beadfinder(Picture(sys.argv[4]), Tau)
+    min_pixels = 25
+    Tau = 180.0
+    Delta = 25.0
+    bf = beadfinder(Picture('F:/My projects/Atomic-Nature-of-Matter/Dataset/frame00000.jpg'), Tau)
     PrevBeads = bf.getBeads(min_pixels)
 
     for i in range(5, len(sys.argv)):
@@ -31,8 +30,8 @@ def main():
                 if d <= Delta and d < min_dist:
                     min_dist = d
             if min_dist != float('inf'):
-                stdio.writef('%.4f\n', min_dist)
-        stdio.writeln()
+                print('%.4f\n', min_dist)
+        writeFile("beadtracker_output/output.txt")
         PrevBeads = CurrBeads
 
 if __name__ == '__main__':

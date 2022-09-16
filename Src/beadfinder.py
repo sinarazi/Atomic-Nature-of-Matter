@@ -93,20 +93,30 @@ pixels; and then writes out all of the blobs (beads with at least 1 pixel).
 """
 Entry
 """
-def writeFile(sth):
-    open("./output/output.txt", "a").write("\n".join(str(i) for i in sth))
+def writeFile(sth, location):
+    open(str(location), "w").write("\n".join(str(i) for i in sth))
 
+
+def createDataset(dataset, P, Tau):
+    for dir1 in os.listdir(dataset):
+        for file in os.listdir(os.path.join(dataset, dir1)):
+            image_path= os.path.join(dataset, dir1,  file)
+            Pic = Picture(image_path)
+            b = beadfinder(Pic, Tau)
+            Beads = b.getBeads(P)
+            writeFile(Beads, "beadfinder_output/output.txt")
 
 def _main():
     
     P = 25
     Tau = 180.0
-    dataset = r'F:/My projects/Atomic-Nature-of-Matter/Dataset'
+    dataset = r'F:/My projects/Atomic-Nature-of-Matter/Dataset/'
     for i in os.listdir(dataset):
         Pic = Picture('frame00000.jpg')
         b = beadfinder(Pic, Tau)
         Beads = b.getBeads(P)
-        writeFile(Beads)
+        writeFile(Beads, "beadfinder_output/output.txt")
+
  
         
 

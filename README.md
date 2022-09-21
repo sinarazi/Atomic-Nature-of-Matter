@@ -19,10 +19,13 @@ In this project, I will redo a version of Perrin's experiment. It is really simp
 Finding the beads in the noisy data is the first difficult task. Each 640 by 480 pixel image requires the conversion of a Color object's value into a luminance value between ```0.0 (black)``` and ```255.0 (white)```. Beads in the foreground are represented by whiter pixels, and water by blacker pixels (background). I divide the issue into three parts: - 1: Read the image, - 2: identify the foreground and background pixels, and - 3: locate the disc-shaped collections of foreground pixels that make up each bead.
 Classify the pixels as foreground or background. I divided the pixels into foreground and background components using the straightforward but effective thresholding technique: any pixels with monochrome luminance values exactly below some threshold tau are considered background, while all other pixels are considered foreground. The initial frame and the same frame after thresholding were changed with ```tau = 180.0```, and locate the blobs. A typical representation of a polystyrene bead is a disc-like shape made up of at least some minimal number ```P (usually 25)``` of connected foreground pixels. Regardless of size or shape, a blob or connected component is a maximal set of connected foreground pixels. Any blob with at least P pixels will be referred to as a bead. The average of the x- and y-coordinates of a blob's (or bead's) individual pixels is the blob's center of mass.
 
-Estimating Avogadro's number. Avogadro's number `NA` is defined to be the number of particles in a mole. By definition, k = R / NA, where the universal gas constant R is approximately `8.31457 J K**-1 mol-1`. Use `R/k` as an estimate of Avogadro's number.
+### Estimating Avogadro's number:
+First, you have to estimate the ```Boltzmann constant```, which is provided with details on the website of Princeton.
+Avogadro's number `NA` is defined to be the number of particles in a mole. By definition, k = R / NA, where the universal gas constant R is approximately `8.31457 J K**-1 mol-1`. Use `R/k` as an estimate of Avogadro's number.
 
 
 ### How to run:
+Copy these lines of 'argv', so as to run the codes.
 
 #### blob_finder.py
 ```

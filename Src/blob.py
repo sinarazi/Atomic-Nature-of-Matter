@@ -1,29 +1,38 @@
 class Blob:
- 
+    """
+    Represents a blob.
+    """
+
     def __init__(self):
+        """
+        Constructs an empty blob.
+        """
 
-        # generation of vacant blob
-        self._P = 0    # The number of pixels
-        self._x = 0.0  # x-coordinate mass center
-        self._y = 0.0  # y-coordinate mass center
-
+        self._P = 0  # number of pixels
+        self._x = 0.0  # x-coordinate of center of mass
+        self._y = 0.0  # y-coordinate of center of mass
 
     def add(self, i, j):
+        """
+        Adds pixel (i, j) to this blob.
+        """
 
-        # adding pixel(i, j) to blob b
         self._x = (self._x * self._P + i) / (self._P + 1)
         self._y = (self._y * self._P + j) / (self._P + 1)
         self._P += 1
 
-
     def mass(self):
-        
-        # return the number of pixels which mass is important
+        """
+        Returns the number of pixels added to this blob, ie, its mass.
+        """
+
         return self._P
 
-
-    def distanceTo(self, other):  
-        # euclidian distance of 2 blobs
+    def distanceTo(self, other):
+        """
+        Returns the Euclidean distance between the center of mass of this blob
+        and the center of mass of other blob.
+        """
         x1 = self._x
         y1 = self._y
         x2 = other._x
@@ -35,8 +44,9 @@ class Blob:
 
         return d
 
-
     def __str__(self):
+        """
+        Returns a string representation of this blob.
+        """
 
-        # generation of string of blobs
         return '%d (%.4f, %.4f)' % (self._P, self._x, self._y)

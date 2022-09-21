@@ -25,7 +25,7 @@ Avogadro's number `NA` is defined to be the number of particles in a mole. By de
 
 
 ### How to run:
-Copy these lines of 'argv', so as to run the codes.
+Copy these lines of `argv`, so as to run the codes.
 
 #### blob_finder.py
 ```

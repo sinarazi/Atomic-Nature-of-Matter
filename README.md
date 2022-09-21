@@ -31,15 +31,15 @@ Avogadro's number `NA` is defined to be the number of particles in a mole. By de
 ### How to run:
 Copy these lines of `argv`, so as to run the codes.
 
-#### blob_finder.py
+#### Src/ blob_finder.py
 ```
 python blob_finder.py 0 180.0 run_1/frame00001.jpg
 ```
-#### bead_tracker.py
+#### Src/ bead_tracker.py
 ```
 python bead_tracker.py 25 180.0 25.0 run_1/frame00001.jpg  run_1/frame00002.jpg
 ```
-#### avogadro.py
+#### Src/ avogadro.py
 ```
 python bead_tracker.py 25 180.0 25.0  run_1/frame00000.jpg run_1/frame00001.jpg | python avogadro.py
 

@@ -1,6 +1,8 @@
-import stdio
-import sys
 from blob_finder import BlobFinder
+import sys
+
+sys.path.insert(1, 'F:\My projects\Atomic-Nature-of-Matter\Libraries')
+import stdio
 from picture import Picture
 
 

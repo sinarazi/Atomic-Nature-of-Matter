@@ -1,5 +1,8 @@
 import math
-from Lib import *
+sys.path.insert(1, 'F:\My projects\Atomic-Nature-of-Matter\Libraries')
+import stdio
+
+
 
 
 """ Reads in the displacements produced by beadtracker.py from standard

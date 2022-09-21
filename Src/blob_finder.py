@@ -1,7 +1,11 @@
-from Lib import *
 import sys
-from Lib.picture import Picture
 from blob import Blob
+
+
+sys.path.insert(1, 'F:\My projects\Atomic-Nature-of-Matter\Libraries')
+import stdarray, luminance
+from picture import Picture
+import stdio
 
 
 class BlobFinder:
@@ -93,4 +97,4 @@ def _main():
 if __name__ == '__main__':
     _main()
 
-#python blob_finder.py 0 180.0 Dataset/run_1/frame00001.jpg
+#python blob_finder.py 0 180.0 run_1/frame00001.jpg
